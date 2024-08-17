@@ -1,0 +1,44 @@
+<html>
+    <title>
+        TODO
+    </title>
+    
+    <body style="background-color: rgb(128, 78, 144);">
+    
+        <div style="display:inline;">
+            <h1 style="border-style: solid ;border-radius: 10px;">
+                TO DO LIST !!
+            </h1>
+            <p1 style="font-family: cursive;">
+                Please enter your todo list below
+
+            </p1>
+        </div>
+        <div>
+        <input type = "text" placeholder="Enter">
+        <button onclick="addTodo()">Add</button>
+        </div>
+    </body>
+    <script>
+         let ctr = 1
+         let i = 1
+            function addTodo(){
+            const inputElement = document.querySelector("input");
+            const value = inputElement.value;
+            const newDivEl = document.createElement("div");
+            newDivEl.setAttribute("id",ctr)
+            newDivEl.innerHTML="<div>"+i+"."+value+'</div><button onClick="deleteTodo('+ctr+')">delete</button>';
+            document.querySelector("body").appendChild(newDivEl);
+            ctr ++
+            i++
+            }
+            function deleteTodo(index){
+                console.log("Delete called")
+            const element = document.getElementById(index);
+            const parentElement = element.parentNode;
+            parentElement.removeChild(element);
+        }
+
+        
+    </script>
+</html>
